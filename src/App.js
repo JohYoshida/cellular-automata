@@ -50,7 +50,6 @@ class App extends Component {
   
   resetData = x => {
     if (!x) x = this.state.x; 
-    // const { x } = this.state;
     const data = [];
     const state = [];
     for (var i = 0; i <= x; i++) {

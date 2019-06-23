@@ -8,7 +8,8 @@ class App extends Component {
     super(props);
     const data = seed();
     this.state = {
-      rule: 1,
+      rule: 22,
+      x: 20,
       data,
     };
   }

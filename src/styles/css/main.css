@@ -1,10 +1,16 @@
 .Cell {
-  height: 10px;
-  width: 10px;
-  border: 1px solid aliceblue;
-  background-color: blue;
+  height: 2px;
+  width: 2px;
   padding: 5px;
   font-size: 6px;
+}
+
+.up {
+  background-color: green;
+}
+
+.down {
+  background-color: blue;
 }
 
 .Board {

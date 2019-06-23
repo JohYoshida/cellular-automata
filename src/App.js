@@ -57,7 +57,8 @@ class App extends Component {
   }
   
   rapidEvolve = () => {
-    for (var i = 0; i < 20; i++) {
+    const { x } = this.state;
+    for (var i = 0; i < x; i++) {
       this.evolveState();
     }
   }

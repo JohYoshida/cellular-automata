@@ -22,7 +22,7 @@ class App extends Component {
           rule={rule}
           updateRule={this.updateRule}
           evolveState={this.evolveState}
-          submit={this.submit}
+          rapidEvolve={this.rapidEvolve}
         />
         <Board 
           rule={rule}
@@ -41,10 +41,6 @@ class App extends Component {
   };
   
   
-  submit = () => {
-    console.log("submit");
-  }
-  
   evolveState = () => {
     const { data, rule, x } = this.state;
     const state = [];
@@ -57,6 +53,12 @@ class App extends Component {
     }
     data.push(state);
     this.setState({ data });
+  }
+  
+  rapidEvolve = () => {
+    for (var i = 0; i < 20; i++) {
+      this.evolveState();
+    }
   }
 }
 

@@ -15,11 +15,11 @@ class Controls extends Component {
           value={this.props.rule}
           onChange={evt => this.props.updateRule(evt)}
         />
-        <button type="button" onClick={this.props.submit}>
-          Submit
-        </button>
         <button type="button" onClick={this.props.evolveState}>
           Evolve State
+        </button>
+        <button type="button" onClick={this.props.rapidEvolve}>
+          Rapid Evolve
         </button>
       </div>
     );

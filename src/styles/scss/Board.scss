@@ -1,0 +1,11 @@
+@import "Cell";
+
+.Board {
+  display: inline-block;
+  justify-content: center;
+  margin-top: 5px;
+
+}
+.row {
+  display: flex;
+}

@@ -1,5 +1,20 @@
-.App {
-  color: red;
+.Cell {
+  height: 10px;
+  width: 10px;
+  border: 1px solid aliceblue;
+  background-color: blue;
+  padding: 5px;
+  font-size: 6px;
+}
+
+.Board {
+  display: inline-block;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.row {
+  display: flex;
 }
 
 /*# sourceMappingURL=main.css.map */

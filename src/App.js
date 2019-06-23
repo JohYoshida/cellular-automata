@@ -33,7 +33,11 @@ class App extends Component {
   };
   
   updateRule = evt => {
-    this.setState({ rule: evt.target.value });
+    const data = seed();
+    this.setState({ 
+      rule: Number(evt.target.value),
+      data
+    });
   };
   
   

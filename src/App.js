@@ -19,10 +19,12 @@ class App extends Component {
     return (
       <div className="App">
         <Controls 
+          x={x}
           rule={rule}
           updateRule={this.updateRule}
           evolveState={this.evolveState}
           rapidEvolve={this.rapidEvolve}
+          updateInputX={this.updateInputX}
         />
         <Board 
           rule={rule}
@@ -34,12 +36,29 @@ class App extends Component {
   };
   
   updateRule = evt => {
-    const data = seed();
+    this.resetData();
     this.setState({ 
       rule: Number(evt.target.value),
-      data
     });
   };
+  
+  updateInputX = evt => {
+    const x = Number(evt.target.value)
+    this.resetData(x);
+    this.setState({ x });
+  };
+  
+  resetData = x => {
+    if (!x) x = this.state.x; 
+    // const { x } = this.state;
+    const data = [];
+    const state = [];
+    for (var i = 0; i <= x; i++) {
+      state.push(Math.floor(Math.random() * 2));
+    }
+    data.push(state);
+    this.setState({ data });
+  }
   
   
   evolveState = () => {

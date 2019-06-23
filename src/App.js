@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   render() {
-    const { rule, data } = this.state;
+    const { rule, x, data } = this.state;
     return (
       <div className="App">
         <Controls 
@@ -27,6 +27,7 @@ class App extends Component {
         <Board 
           rule={rule}
           data={data}
+          x={x}
         />
       </div>
     );

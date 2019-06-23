@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Controls from "./components/Controls";
 import Board from "./components/Board";
-import "./App.css";
+import SituationPanel from "./components/SituationPanel";
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +26,10 @@ class App extends Component {
           rapidEvolve={this.rapidEvolve}
           updateInputX={this.updateInputX}
         />
+        <SituationPanel
+          rule={rule}
+          binaryRule={makeBinaryRule(rule)}
+          />
         <Board 
           rule={rule}
           data={data}

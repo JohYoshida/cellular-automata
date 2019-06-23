@@ -62,4 +62,11 @@ function seed() {
   return data;
 }
 
+function makeBinaryRule(rule) {
+  let binaryRule = rule.toString(2);
+  while (binaryRule.length < 8) {
+    binaryRule = "0" + binaryRule;
+  }
+  return binaryRule;
+}
 export default App;

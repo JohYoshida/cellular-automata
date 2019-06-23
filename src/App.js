@@ -41,11 +41,14 @@ class App extends Component {
   }
   
   evolveState = () => {
-    const { data } = this.state;
+    const { data, rule, x } = this.state;
     const state = [];
-    for (var i = 0; i < 20; i++) {
-      // TODO: change
-      state.push(Math.floor(Math.random() * 2));
+    // Get binary representation of rule #
+    const binaryRule = makeBinaryRule(rule);
+    for (var i = 0; i < x; i++) {
+      // Check against rule
+      let num = checkRule(binaryRule, data[data.length - 1], i);
+      state.push(num)
     }
     data.push(state);
     this.setState({ data });

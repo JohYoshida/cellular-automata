@@ -4,7 +4,7 @@ class Controls extends Component {
   render() {
     return (
       <div className="Controls">
-        <label for="rule">Rule</label>
+        <label>Rule</label>
         <input
           id="rule"
           type="number"
@@ -17,6 +17,9 @@ class Controls extends Component {
         />
         <button type="button" onClick={this.props.submit}>
           Submit
+        </button>
+        <button type="button" onClick={this.props.evolveState}>
+          Evolve State
         </button>
       </div>
     );

@@ -18,19 +18,21 @@ class App extends Component {
     const { rule, x, data } = this.state;
     return (
       <div className="App">
-        <Controls 
-          x={x}
-          rule={rule}
-          updateRule={this.updateRule}
-          evolveState={this.evolveState}
-          rapidEvolve={this.rapidEvolve}
-          updateInputX={this.updateInputX}
-        />
-        <SituationPanel
-          rule={rule}
-          binaryRule={makeBinaryRule(rule)}
-          changeRule={this.changeRule}
-        />
+        <div className="header">
+          <Controls 
+            x={x}
+            rule={rule}
+            updateRule={this.updateRule}
+            evolveState={this.evolveState}
+            rapidEvolve={this.rapidEvolve}
+            updateInputX={this.updateInputX}
+          />
+          <SituationPanel
+            rule={rule}
+            binaryRule={makeBinaryRule(rule)}
+            changeRule={this.changeRule}
+          />
+        </div>
         <Board 
           rule={rule}
           data={data}

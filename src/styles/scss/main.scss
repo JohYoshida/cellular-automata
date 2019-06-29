@@ -1,8 +1,15 @@
 @import "Board";
 @import "SituationPanel";
+@import "Controls";
 
 .App {
   display: flex;
   flex-direction: column;
   text-align: center;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }

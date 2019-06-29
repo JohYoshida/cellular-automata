@@ -6,10 +6,11 @@ import SituationPanel from "./components/SituationPanel";
 class App extends Component {
   constructor(props) {
     super(props);
-    const data = seed();
+    let x  = 25;
+    const data = seed(x);
     this.state = {
       rule: 22,
-      x: 25,
+      x,
       data,
     };
   }
@@ -112,10 +113,10 @@ class App extends Component {
   }
 }
 
-function seed() {
+function seed(x) {
   const data = [];
   const state = [];
-  for (var i = 0; i < 20; i++) {
+  for (var i = 0; i < x; i++) {
     state.push(Math.floor(Math.random() * 2));
   }
   data.push(state);

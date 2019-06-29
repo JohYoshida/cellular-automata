@@ -15,7 +15,7 @@ class Controls extends Component {
             step="1"
             value={this.props.rule}
             onChange={evt => this.props.updateRule(evt)}
-            />
+          />
         </div>
         <div>
           <label>X</label>
@@ -37,7 +37,10 @@ class Controls extends Component {
           <button type="button" onClick={this.props.rapidEvolve}>
             Rapid Evolve
           </button>
-          <button type="button" onClick={this.props.resetData.bind(this, this.props.x)}>
+          <button
+            type="button"
+            onClick={this.props.resetData.bind(this, this.props.x)}
+          >
             Reset
           </button>
         </div>

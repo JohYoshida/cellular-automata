@@ -10,17 +10,12 @@ class Board extends Component {
   makeBoard = () => {
     const Board = [];
     let row = [];
-    const { x, data } = this.props
+    const { x, data } = this.props;
     // Make each row
     for (var i = 0; i < data.length; i++) {
       // Make each cell
       for (var j = 0; j < x; j++) {
-        row.push(
-          <Cell
-            key={j}
-            data={data[i][j]}
-          />
-        );
+        row.push(<Cell key={j} data={data[i][j]} />);
       }
       // Add row to board
       Board.push(
@@ -31,7 +26,7 @@ class Board extends Component {
       row = [];
     }
     return Board;
-  }
+  };
 }
 
 export default Board;

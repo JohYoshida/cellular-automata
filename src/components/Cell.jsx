@@ -3,20 +3,17 @@ import React, { Component } from "react";
 class Cell extends Component {
   render() {
     const className = makeClassName(this.props.data);
-    return(
-      <div className={className}></div>
-    )
+    return <div className={className} />;
   }
 }
 
 function makeClassName(data) {
-  let className = "Cell"
+  let className = "Cell";
   if (data === 0) {
-    className += " down"
+    className += " down";
   } else if (data === 1) {
-    className += " up"
+    className += " up";
   }
-
 
   return className;
 }

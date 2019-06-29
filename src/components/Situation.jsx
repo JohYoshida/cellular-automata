@@ -14,7 +14,11 @@ class Situation extends Component {
         <label>=</label>
         <span
           className="situation"
-          onClick={this.props.changeRule.bind(this, 7 - situation, binaryRule[7 - situation])}
+          onClick={this.props.changeRule.bind(
+            this,
+            7 - situation,
+            binaryRule[7 - situation]
+          )}
         >
           <Cell data={Number(binaryRule[7 - situation])} />
         </span>

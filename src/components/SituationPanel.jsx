@@ -1,66 +1,51 @@
 import React, { Component } from "react";
-import Cell from "./Cell";
+import Situation from "./Situation";
 
 class SituationPanel extends Component {
   render() {
-    const { rule, binaryRule } = this.props;
+    const { binaryRule } = this.props;
     return (
       <div className="SituationPanel">
-        <div className="column">
-          <div>Situation</div>
-          <div className="situation">0</div>
-          <div className="situation">1</div>
-          <div className="situation">2</div>
-          <div className="situation">3</div>
-          <div className="situation">4</div>
-          <div className="situation">5</div>
-          <div className="situation">6</div>
-          <div className="situation">7</div>
-        </div>
-        <div className="column">
-          <div>Left Neighbour</div>
-          <Cell data={0} />
-          <Cell data={0} />
-          <Cell data={0} />
-          <Cell data={0} />
-          <Cell data={1} />
-          <Cell data={1} />
-          <Cell data={1} />
-          <Cell data={1} />
-        </div>
-        <div className="column">
-          <div>Self</div>
-          <Cell data={0} />
-          <Cell data={0} />
-          <Cell data={1} />
-          <Cell data={1} />
-          <Cell data={0} />
-          <Cell data={0} />
-          <Cell data={1} />
-          <Cell data={1} />
-        </div>
-        <div className="column">
-          <div>Right Neighbour</div>
-          <Cell data={0} />
-          <Cell data={1} />
-          <Cell data={0} />
-          <Cell data={1} />
-          <Cell data={0} />
-          <Cell data={1} />
-          <Cell data={0} />
-          <Cell data={1} />
-        </div>
-        <div className="column">
-          <div>Rule {rule}</div>
-          <Cell className="cell" data={Number(binaryRule[7])} />
-          <Cell className="cell" data={Number(binaryRule[6])} />
-          <Cell className="cell" data={Number(binaryRule[5])} />
-          <Cell className="cell" data={Number(binaryRule[4])} />
-          <Cell className="cell" data={Number(binaryRule[3])} />
-          <Cell className="cell" data={Number(binaryRule[2])} />
-          <Cell className="cell" data={Number(binaryRule[1])} />
-          <Cell className="cell" data={Number(binaryRule[0])} />
-        </div>
+        <Situation
+          data={[0, 0, 0, 0]}
+          binaryRule={binaryRule}
+          changeRule={this.props.changeRule}
+        />
+        <Situation
+          data={[1, 0, 0, 1]}
+          binaryRule={binaryRule}
+          changeRule={this.props.changeRule}
+        />
+        <Situation
+          data={[2, 0, 1, 0]}
+          binaryRule={binaryRule}
+          changeRule={this.props.changeRule}
+        />
+        <Situation
+          data={[3, 0, 1, 1]}
+          binaryRule={binaryRule}
+          changeRule={this.props.changeRule}
+        />
+        <Situation
+          data={[4, 1, 0, 0]}
+          binaryRule={binaryRule}
+          changeRule={this.props.changeRule}
+        />
+        <Situation
+          data={[5, 1, 0, 1]}
+          binaryRule={binaryRule}
+          changeRule={this.props.changeRule}
+        />
+        <Situation
+          data={[6, 1, 1, 0]}
+          binaryRule={binaryRule}
+          changeRule={this.props.changeRule}
+        />
+        <Situation
+          data={[7, 1, 1, 1]}
+          binaryRule={binaryRule}
+          changeRule={this.props.changeRule}
+        />
       </div>
     );
   }

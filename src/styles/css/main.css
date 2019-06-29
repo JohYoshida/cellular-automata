@@ -3,6 +3,7 @@
   height: 2px;
   width: 2px;
   padding: 5px;
+  font-size: 8px;
 }
 
 .up {
@@ -11,6 +12,70 @@
 
 .down {
   background-color: blue;
+}
+
+.red {
+  background-color: #aa2e25;
+}
+
+.pink {
+  background-color: #a31545;
+}
+
+.purple {
+  background-color: #6d1b7b;
+}
+
+.deepPurple {
+  background-color: #482880;
+}
+
+.indigo {
+  background-color: #2c387e;
+}
+
+.blue {
+  background-color: #1769aa;
+}
+
+.lightBlue {
+  background-color: #0276aa;
+}
+
+.cyan {
+  background-color: #008394;
+}
+
+.teal {
+  background-color: #00695f;
+}
+
+.green {
+  background-color: #357a38;
+}
+
+.lightGreen {
+  background-color: #618833;
+}
+
+.lime {
+  background-color: #8f9a27;
+}
+
+.yellow {
+  background-color: #b2a429;
+}
+
+.amber {
+  background-color: #b28704;
+}
+
+.orange {
+  background-color: #b26a00;
+}
+
+.deepOrange {
+  background-color: #b23c17;
 }
 
 .Board {
@@ -29,19 +94,11 @@
   margin-bottom: 15px;
   display: flex;
   justify-content: center;
-  flex-direction: row;
-}
-.SituationPanel .column {
-  margin-right: 10px;
-  display: flex;
   flex-direction: column;
+}
+.SituationPanel .situation {
+  display: flex;
   justify-content: center;
-}
-.SituationPanel .column .situation {
-  font-size: 11px;
-}
-.SituationPanel .column .cell {
-  margin-bottom: 2px;
 }
 
 .App {

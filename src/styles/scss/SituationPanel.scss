@@ -3,20 +3,10 @@
   margin-bottom: 15px;
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
 
-  .column {
-    margin-right: 10px;
+  .situation {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-
-    .situation {
-      font-size: 11px;
-    }
-
-    .cell {
-      margin-bottom: 2px;
-    }
   }
 }

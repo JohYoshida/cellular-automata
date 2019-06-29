@@ -29,7 +29,8 @@ class App extends Component {
         <SituationPanel
           rule={rule}
           binaryRule={makeBinaryRule(rule)}
-          />
+          changeRule={this.changeRule}
+        />
         <Board 
           rule={rule}
           data={data}
@@ -63,6 +64,28 @@ class App extends Component {
     this.setState({ data });
   }
   
+  changeRule = (position, value) => {
+    let { rule } = this.state;
+    let binaryRule = makeBinaryRule(rule);
+    // switch value
+    switch (Number(value)) {
+      case 0:
+        value = "1";
+        break;
+      case 1:
+        value = "0";
+        break;
+      default:
+        console.log("Error in App.js method changeRule");
+    }
+    // construct and apply new rule
+    let arr = binaryRule.split("");
+    arr[position] = value;
+    let newBinaryRule = arr.join("");
+    rule = parseInt(newBinaryRule, 2);
+    this.resetData();
+    this.setState({ rule });
+  }
   
   evolveState = () => {
     const { data, rule, x } = this.state;
@@ -144,7 +167,7 @@ function checkRule(binaryRule, data, i) {
       }
     }
   } else {
-    console.log("Error in App.js checkRule()");
+    console.log("Error in App.js function checkRule()");
   }
   return Number(num);
 }

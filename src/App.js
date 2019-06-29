@@ -49,30 +49,6 @@ class App extends Component {
     );
   };
 
-  updateRule = evt => {
-    this.resetData();
-    this.setState({
-      rule: Number(evt.target.value),
-    });
-  };
-
-  updateInputX = evt => {
-    const x = Number(evt.target.value)
-    this.resetData(x);
-    this.setState({ x });
-  };
-
-  resetData = x => {
-    if (!x) x = this.state.x;
-    const data = [];
-    const state = [];
-    for (var i = 0; i <= x; i++) {
-      state.push(Math.floor(Math.random() * 2));
-    }
-    data.push(state);
-    this.setState({ data });
-  }
-
   changeRule = (position, value) => {
     let { rule } = this.state;
     let binaryRule = makeBinaryRule(rule);
@@ -96,13 +72,6 @@ class App extends Component {
     this.setState({ rule });
   }
 
-  selectColor = (id, color) => {
-    console.log(id, color);
-    let { colors } = this.state;
-    colors[id - 1] = color;
-    this.setState({ colors });
-  }
-
   evolveState = () => {
     const { data, rule, x } = this.state;
     const state = [];
@@ -123,24 +92,37 @@ class App extends Component {
       this.evolveState();
     }
   }
-}
 
-function seed(x) {
-  const data = [];
-  const state = [];
-  for (var i = 0; i < x; i++) {
-    state.push(Math.floor(Math.random() * 2));
+  resetData = x => {
+    if (!x) x = this.state.x;
+    const data = [];
+    const state = [];
+    for (var i = 0; i <= x; i++) {
+      state.push(Math.floor(Math.random() * 2));
+    }
+    data.push(state);
+    this.setState({ data });
   }
-  data.push(state);
-  return data;
-}
 
-function makeBinaryRule(rule) {
-  let binaryRule = rule.toString(2);
-  while (binaryRule.length < 8) {
-    binaryRule = "0" + binaryRule;
+  selectColor = (id, color) => {
+    console.log(id, color);
+    let { colors } = this.state;
+    colors[id - 1] = color;
+    this.setState({ colors });
   }
-  return binaryRule;
+
+  updateInputX = evt => {
+    const x = Number(evt.target.value)
+    this.resetData(x);
+    this.setState({ x });
+  };
+
+  updateRule = evt => {
+    this.resetData();
+    this.setState({
+      rule: Number(evt.target.value),
+    });
+  };
 }
 
 function checkRule(binaryRule, data, i) {
@@ -186,6 +168,24 @@ function checkRule(binaryRule, data, i) {
     console.log("Error in App.js function checkRule()");
   }
   return Number(num);
+}
+
+function makeBinaryRule(rule) {
+  let binaryRule = rule.toString(2);
+  while (binaryRule.length < 8) {
+    binaryRule = "0" + binaryRule;
+  }
+  return binaryRule;
+}
+
+function seed(x) {
+  const data = [];
+  const state = [];
+  for (var i = 0; i < x; i++) {
+    state.push(Math.floor(Math.random() * 2));
+  }
+  data.push(state);
+  return data;
 }
 
 export default App;

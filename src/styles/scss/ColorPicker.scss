@@ -1,0 +1,21 @@
+.ColorPicker {
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .Picker {
+    display: flex;
+    flex-direction: column;
+
+    .colors {
+      display: flex;
+      flex-direction: row;
+
+      .cell {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}

@@ -106,6 +106,25 @@
   flex-direction: column;
 }
 
+.ColorPicker {
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.ColorPicker .Picker {
+  display: flex;
+  flex-direction: column;
+}
+.ColorPicker .Picker .colors {
+  display: flex;
+  flex-direction: row;
+}
+.ColorPicker .Picker .colors .cell {
+  display: flex;
+  justify-content: center;
+}
+
 .App {
   display: flex;
   flex-direction: column;

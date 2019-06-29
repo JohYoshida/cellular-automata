@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Controls from "./components/Controls";
 import Board from "./components/Board";
 import SituationPanel from "./components/SituationPanel";
+import ColorPicker from "./components/ColorPicker";
 
 class App extends Component {
   constructor(props) {
@@ -12,11 +13,12 @@ class App extends Component {
       rule: 22,
       x,
       data,
+      colors: ["", ""]
     };
   }
 
   render() {
-    const { rule, x, data } = this.state;
+    const { rule, x, data, colors } = this.state;
     return (
       <div className="App">
         <div className="header">
@@ -31,13 +33,16 @@ class App extends Component {
           />
           <SituationPanel
             rule={rule}
+            colors={colors}
             binaryRule={makeBinaryRule(rule)}
             changeRule={this.changeRule}
           />
+        <ColorPicker selectColor={this.selectColor}/>
         </div>
         <Board
           rule={rule}
           data={data}
+          colors={colors}
           x={x}
         />
       </div>
@@ -89,6 +94,13 @@ class App extends Component {
     rule = parseInt(newBinaryRule, 2);
     this.resetData();
     this.setState({ rule });
+  }
+
+  selectColor = (id, color) => {
+    console.log(id, color);
+    let { colors } = this.state;
+    colors[id - 1] = color;
+    this.setState({ colors });
   }
 
   evolveState = () => {

@@ -26,6 +26,7 @@ class App extends Component {
             evolveState={this.evolveState}
             rapidEvolve={this.rapidEvolve}
             updateInputX={this.updateInputX}
+            resetData={this.resetData}
           />
           <SituationPanel
             rule={rule}

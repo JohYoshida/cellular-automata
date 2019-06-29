@@ -30,12 +30,15 @@ class Controls extends Component {
           />
           <label>{this.props.x}</label>
         </div>
-        <div>
+        <div className="buttons">
           <button type="button" onClick={this.props.evolveState}>
             Evolve State
           </button>
           <button type="button" onClick={this.props.rapidEvolve}>
             Rapid Evolve
+          </button>
+          <button type="button" onClick={this.props.resetData.bind(this, this.props.x)}>
+            Reset
           </button>
         </div>
       </div>

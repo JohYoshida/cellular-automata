@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="header">
-          <Controls 
+          <Controls
             x={x}
             rule={rule}
             updateRule={this.updateRule}
@@ -34,7 +34,7 @@ class App extends Component {
             changeRule={this.changeRule}
           />
         </div>
-        <Board 
+        <Board
           rule={rule}
           data={data}
           x={x}
@@ -42,22 +42,22 @@ class App extends Component {
       </div>
     );
   };
-  
+
   updateRule = evt => {
     this.resetData();
-    this.setState({ 
+    this.setState({
       rule: Number(evt.target.value),
     });
   };
-  
+
   updateInputX = evt => {
     const x = Number(evt.target.value)
     this.resetData(x);
     this.setState({ x });
   };
-  
+
   resetData = x => {
-    if (!x) x = this.state.x; 
+    if (!x) x = this.state.x;
     const data = [];
     const state = [];
     for (var i = 0; i <= x; i++) {
@@ -66,7 +66,7 @@ class App extends Component {
     data.push(state);
     this.setState({ data });
   }
-  
+
   changeRule = (position, value) => {
     let { rule } = this.state;
     let binaryRule = makeBinaryRule(rule);
@@ -89,7 +89,7 @@ class App extends Component {
     this.resetData();
     this.setState({ rule });
   }
-  
+
   evolveState = () => {
     const { data, rule, x } = this.state;
     const state = [];
@@ -103,7 +103,7 @@ class App extends Component {
     data.push(state);
     this.setState({ data });
   }
-  
+
   rapidEvolve = () => {
     const { x } = this.state;
     for (var i = 0; i < x; i++) {

@@ -9,7 +9,7 @@ class App extends Component {
     const data = seed();
     this.state = {
       rule: 22,
-      x: 20,
+      x: 25,
       data,
     };
   }

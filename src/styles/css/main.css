@@ -116,5 +116,8 @@
   flex-direction: row;
   justify-content: center;
 }
+.App label {
+  margin-right: 3px;
+}
 
 /*# sourceMappingURL=main.css.map */
